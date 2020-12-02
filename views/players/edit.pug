@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h1 Edit Player 
+    form(action="/players/edit/"+player._id,method="post")
+        .form-group
+            label(for="name") Player Name
+            input#name(type="text", class="form-control", name="name", value=player.name)
+        .form-group
+            label(for="team") Player Team
+            input#team(type="text", class="form-control", name="team", value=player.team)
+        input(type="submit", class="btn btn-info")

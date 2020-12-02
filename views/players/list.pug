@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    .row
+        .col-sm-8
+            h1=title
+        .col-sm-4
+            a(href="/players/add", class="btn btn-success float-right") Add New Player 
+    table.table
+        thead
+            tr
+                th Name
+                th Team
+                th Actions
+        tbody
+            each player in players
+                tr
+                    td=player.name
+                    td=player.team
+                    td
+                        a(href="/players/delete/"+player._id, class="btn btn-danger") Delete
+                        a(href="/players/edit/"+player._id, class="btn btn-warning") Edit
