@@ -5,7 +5,7 @@ var Player = require("../models/player");
 router.get("/", async function (req, res, next) {
   let players = await Player.find();
   // console.log(players);
-  res.render("players/list", { title: "Players In DB", players });
+  res.render("players/list", { title: "Players", players });
 });
 
 router.get("/add", async function (req, res, next) {
