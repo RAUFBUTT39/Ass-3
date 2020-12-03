@@ -41,10 +41,13 @@ app.use(function (err, req, res, next) {
 });
 
 mongoose
-  .connect("mongodb://localhost/playerscrud", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://user1:225534hg@cluster0.qrvz0.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => console.log("Connected to Mongo...."))
   .catch((error) => console.log(error.message));
 module.exports = app;
